@@ -1,0 +1,15 @@
+{
+    "locations": [
+        {"name": "Berlin", "value" : "ber"},
+        {"name": "Bologna", "value" : "bol"},
+        {"name": "Dublin", "value" : "dub"},
+        {"name": "Edinburgh", "value" : "edi"},
+        {"name": "Helsinki", "value" : "hel"},
+        {"name": "Krakow", "value" : "kra"},
+        {"name": "Leiden", "value" : "lei"},
+        {"name": "Leuven", "value" : "leu"},
+        {"name": "Madrid", "value" : "mad"},
+        {"name": "Paris", "value" : "par"},
+        {"name": "Zurich", "value" : "zur"}
+    ]
+}
