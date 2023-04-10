@@ -29,6 +29,8 @@ function displayMatchingTravelInfo() {
   if (from === to) {
     // if so, display a message and return early
     document.getElementById("div_to_change").innerHTML = "The origin and destination must be different.";
+    var div = document.querySelector(".bars");
+    div.style.display = "none";
     return;
   }
 
