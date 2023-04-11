@@ -107,22 +107,22 @@ h2 {
 
 .first_div{
   width: 0%;
-  background-color: blue;
+  background-color: #ff7246;
 }
 
 .second_div{
   width: 21%;
-  background-color: blue;
+  background-color: #ff7246;
 }
 
 .third_div{
   width: 75%;
-  background-color: blue;
+  background-color: #edccf7;
 }
 
 .fourth_div{
   width: 56.25%;
-  background-color: blue;
+  background-color: #edccf7;
 }
 
 .bars p {
@@ -140,7 +140,7 @@ h2 {
   line-height: 2;
   color: white;
   margin-left: 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 
