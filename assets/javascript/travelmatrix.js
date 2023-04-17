@@ -47,38 +47,46 @@ function displayMatchingTravelInfo() {
 
         // create a string to display the matching travel information
         let resultStr = "";
-        let emission_p = 0;
+        
         if (matchingTravelInfo.length === 0) {
           resultStr = `No travel information found for ${from} to ${to}.`;
         } else {
           matchingTravelInfo.forEach(info => {
             const emissionPlane = parseFloat(info.trav[5]["emission-plane"]);
-            emission_p = emissionPlane;
             const links = info.trav[2].links.map((link, index) => {
               const linkName = info.trav[4]["link-names"][index];
               const linkText = info.trav[3]["link-text"][index];
               return `${linkText}<a href="${link}" target="_blank">${linkName}</a>.`;
             }).join("<br>");
-            resultStr += `<p>You can make this journey sustainable by using the following means of transportation:</p>`;
+            resultStr += `<p><u>You can make this journey sustainable by using the following means of transportation:</u></p>`;
             resultStr += `${links}<br>`;
             if (emissionPlane > 0) {
-              const emissionPlane = info.trav[5]["emission-plane"];
-              const emissionCalc = parseFloat(info.trav[5]["emission-plane"]) - parseFloat(info.trav[6]["emission-alt"]);
-              resultStr += `<p>By doing so you would be saving ${emissionCalc} kg of CO2 emissions per person compared to using the plane (which would create ${emissionPlane} kg of CO2 emissions per person).</p>`;
+              const emissionPlane = parseFloat(info.trav[5]["emission-plane"]);
+              const emissionAlt = parseFloat(info.trav[6]["emission-alt"]);
+              const emissionCalc = emissionPlane - emissionAlt;
+              resultStr += `<p>By doing so <u>you would be saving ${emissionCalc} kg of CO2 emissions per person</u> compared to using the plane (which would create ${emissionPlane} kg of CO2 emissions per person).</p>`;
+              var f_div = document.querySelector(".fdiv");
+              f_div.style.width =  emissionAlt/2000 * 75 + "%";
+              var s_div = document.querySelector(".sdiv");
+              s_div.style.width =  emissionPlane/2000 * 75 + "%";
+              var fbar = document.querySelector(".fbars");
+              fbar.style.display = "block";
             } else {
               const emissionAlt = parseFloat(info.trav[6]["emission-alt"]);
               emission_alt = emissionAlt;
               resultStr += `<p>Given the short distance of this travel, taking the train should be the default means of transportation. Your emissions per person would be ${emissionAlt} kg of CO2.</p>`;
+              var div = document.querySelector(".fbars");
+              div.style.display = "none";
             }
           });
         }
 
         // display the matching travel information in the "results" div
         document.getElementById("div_to_change").innerHTML = resultStr;
-        var div = document.querySelector(".bars");
-        var f_div = document.querySelector(".first_div");
-        f_div.style.width =  emission_p/2000 * 75 + "%";
-        div.style.display = "block";
+        var title_bar = document.querySelector(".bars-header");
+        title_bar.style.display = "block";
+        var sbar = document.querySelector(".sbars");
+        sbar.style.display = "block";
       })
       .catch(error => console.error('Error loading travel information:', error));
 }

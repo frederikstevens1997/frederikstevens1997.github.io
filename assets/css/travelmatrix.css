@@ -27,7 +27,7 @@ body {
 
 
 .text_middle {
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   width: 85%;
   margin-left: 6.5%;
   text-align: justify;
@@ -42,7 +42,7 @@ body {
   
 #title_top {
   white-space: nowrap;
-  font-size: 48px;
+  font-size: 4vw;
   font-family: "SerifFont",Times,Georgia,serif;
   font-weight: 400;
   margin-left: 3%;
@@ -76,6 +76,10 @@ body {
   margin-right: 3%;
 }
 
+#button_bottom {
+  margin-left: 5%;
+}
+
 hr{
   width: 95%;
 }
@@ -105,14 +109,19 @@ h2 {
   margin-bottom: -0.2em;
 }
 
-.first_div{
+.fdiv{
+  width: 0%;
+  background-color: #005a46;
+}
+
+.sdiv{
   width: 0%;
   background-color: #ff7246;
 }
 
 .second_div{
   width: 21%;
-  background-color: #ff7246;
+  background-color: #3b38eb;
 }
 
 .third_div{
@@ -122,27 +131,30 @@ h2 {
 
 .fourth_div{
   width: 56.25%;
-  background-color: #edccf7;
+  background-color: #005a46;
 }
 
-.bars p {
+.bars-header {
   margin-left: 6.5%;
 }
 
-.bars div {
+.sbars p, .fbars p {
+  margin-left: 6.5%;
+}
+
+.sbars div, .fbars div {
   margin: -18px 0;
   margin-left: 6.5%;
   padding-left: 10px;
   height: 25px;
 }
 
-.bars div p {
+.sbars div p, .fbars div p {
   line-height: 2;
   color: white;
   margin-left: 0;
   font-size: 14px;
 }
-
 
 @media screen and (max-width: 900px) {
   .top {
