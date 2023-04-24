@@ -58,13 +58,13 @@ function displayMatchingTravelInfo() {
               const linkText = info.trav[3]["link-text"][index];
               return `${linkText}<a href="${link}" target="_blank">${linkName}</a>.`;
             }).join("<br>");
-            resultStr += `<p><u>You can make this journey sustainable by using the following means of transportation:</u></p>`;
+            resultStr += `<h3>You can make this journey sustainable by using the following means of transportation:</h3>`;
             resultStr += `${links}<br>`;
             if (emissionPlane > 0) {
               const emissionPlane = parseFloat(info.trav[5]["emission-plane"]);
               const emissionAlt = parseFloat(info.trav[6]["emission-alt"]);
               const emissionCalc = emissionPlane - emissionAlt;
-              resultStr += `<p>By doing so <u>you would be saving ${emissionCalc} kg of CO2 emissions per person</u> compared to using the plane (which would create ${emissionPlane} kg of CO2 emissions per person).</p>`;
+              resultStr += `<p>By doing so <b>you would be saving ${emissionCalc} kg of CO2 emissions per person</b> compared to using the plane (which would create ${emissionPlane} kg of CO2 emissions per person).</p>`;
               var f_div = document.querySelector(".fdiv");
               f_div.style.width =  emissionAlt/2000 * 75 + "%";
               var s_div = document.querySelector(".sdiv");
