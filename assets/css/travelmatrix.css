@@ -136,10 +136,16 @@ button:hover {
 
 .bars-header {
   margin-left: 6.5%;
+  margin-top: 2.5em;
+  margin-bottom: -0.4em;
 }
 
 .sbars p, .fbars p {
   margin-left: 6.5%;
+}
+
+.fbars {
+  margin-top: -0.5em;
 }
 
 .sbars div, .fbars div {
@@ -156,7 +162,11 @@ button:hover {
   font-size: 14px;
 }
 
-@media screen and (max-width: 900px) {
+.choose_txt {
+  margin-left: 3%;
+}
+
+@media screen and (max-width: 940px) {
   .top {
     flex-direction: column;
   }
@@ -201,5 +211,10 @@ button:hover {
     width: 90%;
     margin: 10px 0;
   }
-
+  .choose_txt {
+    text-align: center;
+  }
+  img {
+    margin-top: 5% !important;
+  }
 }
