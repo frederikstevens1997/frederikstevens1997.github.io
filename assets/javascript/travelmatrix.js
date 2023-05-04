@@ -25,7 +25,7 @@ function displayMatchingTravelInfo() {
   const from = document.getElementById("dropdown1").value;
   const to = document.getElementById("dropdown2").value;
 
-  var txt = document.querySelector(".choose_txt");
+  var txt = document.querySelector(".txt");
   txt.style.display = "none";
 
   // check if from and to are the same

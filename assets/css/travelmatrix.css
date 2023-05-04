@@ -162,7 +162,7 @@ button:hover {
   font-size: 14px;
 }
 
-.choose_txt {
+.txt {
   margin-left: 3%;
 }
 
@@ -211,7 +211,7 @@ button:hover {
     width: 90%;
     margin: 10px 0;
   }
-  .choose_txt {
+  .txt {
     text-align: center;
   }
   img {
